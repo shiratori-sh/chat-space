@@ -1,16 +1,16 @@
-.alert-box
-  .alert-box__log グループを作成しました
-
 .wrapper
   .chat-side
     .chat-side__header
       .chat-side__header__box
-        %p.chat-side__header__box__user test-user
+        %p.chat-side__header__box__user
+          = current_user.name
         %ul.chat-side__header__box__menu
           %li.chat-side__header__box__menu__new-group
-            %a.fa.fa-edit{ href: ""}
+            = link_to do
+              = fa_icon 'pencil-square-o',class: 'fa-edit'
           %li.chat-side__header__box__menu__edit-user
-            %a.fa.fa-cog{href: ""}
+            = link_to edit_user_path(current_user) do
+              = fa_icon 'cog', class: 'fa-cog'
     .groups
       %a{href: ""}
         .group
@@ -52,7 +52,7 @@
           %label.message-form__box__image{for: "message_image"}
             %i.fa.fa-image
             %input.message-form__box__image__file{name: "message[image]", type: "file"}/
-        %input.sent-btn{data:{disable: {with: "sent", size: "30", name: "", type: "submit", value: "Send"}}}/
+        %input.sent-btn{data:{disable: {with: "sent", name: "", type: "submit", value: "Send"}}}/
 
 
 
