@@ -6,7 +6,7 @@
           = current_user.name
         %ul.chat-side__header__box__menu
           %li.chat-side__header__box__menu__new-group
-            = link_to do
+            = link_to new_group_path do
               = fa_icon 'pencil-square-o',class: 'fa-edit'
           %li.chat-side__header__box__menu__edit-user
             = link_to edit_user_path(current_user) do
@@ -52,7 +52,7 @@
           %label.message-form__box__image{for: "message_image"}
             %i.fa.fa-image
             %input.message-form__box__image__file{name: "message[image]", type: "file"}/
-        %input.sent-btn{data:{disable: {with: "sent", name: "", type: "submit", value: "Send"}}}/
+        %input.sent-btn{"data-disable-with":"sent", name: "", type: "submit", value: "Send"}/
 
 
 
