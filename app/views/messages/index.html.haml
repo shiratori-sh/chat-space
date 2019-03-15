@@ -40,14 +40,22 @@
           %p.message__info__talker test-user
           %p.message__info__time 2019/3/10 18:30
         %p.message__text さようなら！
-    .message-form
-      %form{action: "", enctype: "", method: "post"}
-        .message-form__box
-          %input{name: "", placeholder: "type a message", type: "text"}/
-          %label.message-form__box__image{for: "message_image"}
-            %i.fa.fa-image
-            %input.message-form__box__image__file{name: "message[image]", type: "file"}/
-        %input.sent-btn{"data-disable-with":"sent", name: "", type: "submit", value: "Send"}/
+    .form
+      = form_for [@group, @message] do |f|
+        = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+        .form__mask
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'form__submit'
+    / .message-form
+    /   %form{action: "", enctype: "", method: "post"}
+    /     .message-form__box
+    /       %input{name: "", placeholder: "type a message", type: "text"}/
+    /       %label.message-form__box__image{for: "message_image"}
+    /         %i.fa.fa-image
+    /         %input.message-form__box__image__file{name: "message[image]", type: "file"}/
+    /     %input.sent-btn{"data-disable-with":"sent", name: "", type: "submit", value: "Send"}/
 
 
 
