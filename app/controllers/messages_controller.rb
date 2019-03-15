@@ -4,7 +4,7 @@ class MessagesController < ApplicationController
     return
   end
 
-  def cleate
+  def create
   end
 
 end
