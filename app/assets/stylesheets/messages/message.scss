@@ -2,17 +2,6 @@
     box-sizing: border-box;
 }
 
-.alert-box {
-  color: white;
-  font-size: 1rem;
-  font-weight: lighter;
-  text-align: center;
-  width: 100vw;
-  &__log {
-    background-color: #38aef0;
-  }
-}
-
 .wrapper {
   margin: 0;
   padding: 0;
@@ -72,18 +61,18 @@
       background-color: #2f3e51;
       padding: 20px 20px 0;
       overflow: scroll;
-      a{
-        text-decoration: none;
+      text-decoration: none;
+      .group{
+        margin-bottom: 40px;
         color: $side-text;
-        .group{
-          margin-bottom: 40px;
-          &__group-name{
-            font-size: 15px;
-            margin-bottom: 5px;
-          }
-          &__messages{
-            font-size: 11px;
-          }
+        &__group-name{
+          font-size: 15px;
+          margin-bottom: 5px;
+          color:$side-text;
+        }
+        &__group-messages{
+          font-size: 11px;
+          color: $side-text;
         }
       }
     }
@@ -201,5 +190,6 @@
     }
   }
 }
+
 
 

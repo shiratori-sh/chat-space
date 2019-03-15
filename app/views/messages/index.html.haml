@@ -12,18 +12,13 @@
             = link_to edit_user_path(current_user) do
               = fa_icon 'cog', class: 'fa-cog'
     .groups
-      %a{href: ""}
+      - current_user.groups.each do |group|
         .group
-          %p.group__group-name test-group
-          %p.group__messages さようなら
-      %a{href: ""}
-        .group
-          %p.group__group-name sample-group
-          %p.group__messages hello!
-      %a{href: ""}
-        .group
-          %p.group__group-name example
-          %p.group__messages まだメッセージがありません
+          = link_to group_messages_path(group) do
+            .group__group-name
+              = group.group_name
+            .group__group-messages
+              メッセージはまだありません。
 
   .chat-main
     .chat-main__header
