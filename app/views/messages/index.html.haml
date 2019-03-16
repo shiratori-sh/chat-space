@@ -26,7 +26,9 @@
         %h2.chat-main__header__group-name-box__current-group test-group
         %ul.chat-main__header__group-name-box__member-list
           Member :
-          %li.chat-main__header__group-name-box__member-list__member test-user
+          %li.chat-main__header__group-name-box__member-list__member
+            - @group.users.each do |user|
+              = "#{user.name},"
       %a{href: ""}
         .edit-btn Edit
     .messages
