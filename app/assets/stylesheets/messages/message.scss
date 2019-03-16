@@ -139,7 +139,7 @@
             margin-left: 10px;
           }
         }
-        &__text{
+        &__content{
           color: #434a54;
           font-size: 14px;
           margin-bottom: 10px;
@@ -156,6 +156,7 @@
         float: left;
         height: 50px;
         width: calc(100% - 150px);
+        text-indent: 10px;
       }
       &__mask {
         background-color: $white;
