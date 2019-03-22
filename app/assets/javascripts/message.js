@@ -1,9 +1,9 @@
 $(function() {
-  function buildHTML(message){
+  function messageHTML(message){
 
-    var word = ( message.content !== null ) ? `<p class ="message__content__text"> "${message.content}" </p>` : "";
+    var word = ( message.content !== null ) ? `<p class ="message__content__text"> ${message.content} </p>` : "";
 
-    var image = ( message.imageurl !== null ) ? `<img src = "${message.imageurl}" class="message__content__image">` : "";
+    var image = ( message.imageurl !== null ) ? `<img src = ${message.imageurl} class="message__content__image">` : "";
 
     var html = `
 <div class="message">
@@ -36,8 +36,8 @@ $(function() {
       processData: false,
       contentType: false
     })
-    .done(function(data){
-      var html = buildHTML(data);
+    .done(function(message_data){
+      var html = messageHTML(message_data);
       $('.messages').append(html)
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
     })
