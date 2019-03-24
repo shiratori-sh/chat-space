@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
   function messageHTML(message){
 
     var word = ( message.content !== null ) ? `<p class ="message__content__text"> ${message.content} </p>` : "";

@@ -1,4 +1,4 @@
-$(function(){
+$(document).on('turbolinks:load', function(){
   var user_list = $("#user-search-result");
 
   function appendUsers(user) {
@@ -47,5 +47,28 @@ function appendUsersErrorHTML(error){
       else{
         $("#user-search-result").empty()
       }
+  });
+  var group_member = $("#chat-group-users");
+function append(member, member_id) {
+  var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
+  <input name='group[user_ids][]' type='hidden' value='${ member_id }'>
+  <p class='chat-group-user__name'>${ member }</p>
+  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn' data-user-id="${ member_id }" data-user-name="${ member }">削除</a>
+</div>`
+  group_member.append(html);
+}
+
+  $('#user-search-result').on('click', '.user-search-add', function(){
+  $(this).parent().empty();
+  var member = $(this).attr("data-user-name");
+  var member_id = $(this).attr("data-user-id");
+  append(member, member_id)
+  });
+
+  $('#chat-group-users').on('click', '.user-search-remove', function(){
+  var member_name = {user_id: $(this).attr('data-user-id'), name: $(this).attr('data-user-name')};
+  $(this).parent().empty();
+  appendUsers(member_name)
+  $("#user-search-result").empty()
   });
 });
