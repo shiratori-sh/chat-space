@@ -52,7 +52,7 @@ $(document).on('turbolinks:load', function(){
       }
   });
   var group_member = $("#chat-group-users");
-  function append(member, member_id) {
+  function appendRemoveUser(member, member_id) {
     var html = `
     <div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
       <input name='group[user_ids][]' type='hidden' value='${ member_id }'>
