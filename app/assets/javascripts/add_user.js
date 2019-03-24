@@ -66,7 +66,7 @@ $(document).on('turbolinks:load', function(){
     $(this).parent().empty();
     var member = $(this).attr("data-user-name");
     var member_id = $(this).attr("data-user-id");
-    append(member, member_id)
+    appendRemoveUser(member, member_id)
   });
 
   $('#chat-group-users').on('click', '.user-search-remove', function(){
