@@ -7,7 +7,7 @@
         %h2.chat-main__header__group-name-box__current-group
           = @group.group_name
         %ul.chat-main__header__group-name-box__member-list
-          Member :
+          Member : test
           %li.chat-main__header__group-name-box__member-list__member
             - @group.users.each do |user|
               = "#{user.name},"
